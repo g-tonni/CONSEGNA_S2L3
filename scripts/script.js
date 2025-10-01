@@ -258,7 +258,7 @@ console.log('')
 */
 
 let personaggioRandom = starWarsCharacters[Math.floor(Math.random() * 10)]
-console.log(personaggioRandom)
+console.log('PERSONAGGIO SELEZIONATO', personaggioRandom)
 console.log(
   personaggioRandom.name +
     ' is a ' +
