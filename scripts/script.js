@@ -128,7 +128,7 @@ const femaleCharacters = []
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === 'female') {
-   femaleCharacters.push(starWarsCharacters[i])
+    femaleCharacters.push(starWarsCharacters[i])
   }
 }
 
@@ -145,7 +145,7 @@ const eyeColor = {
   yellow: [],
   brown: [],
   red: [],
-  'blue-gray': []
+  'blue-gray': [],
 }
 
 /* ESERCIZIO 5
@@ -153,30 +153,30 @@ const eyeColor = {
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 
-  for (let i = 0; i < starWarsCharacters.length; i++) {
-    switch (starWarsCharacters[i].eye_color) {
-      case 'blue':
-        eyeColor.blue.push(starWarsCharacters[i])
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  switch (starWarsCharacters[i].eye_color) {
+    case 'blue':
+      eyeColor.blue.push(starWarsCharacters[i])
       break
-      case 'yellow':
-        eyeColor.yellow.push(starWarsCharacters[i])
+    case 'yellow':
+      eyeColor.yellow.push(starWarsCharacters[i])
       break
-      case 'brown':
-        eyeColor.brown.push(starWarsCharacters[i])
+    case 'brown':
+      eyeColor.brown.push(starWarsCharacters[i])
       break
-      case 'red':
-        eyeColor.red.push(starWarsCharacters[i])
+    case 'red':
+      eyeColor.red.push(starWarsCharacters[i])
       break
-      case "blue-gray":
-        eyeColor['blue-gray'].push(starWarsCharacters[i])
+    case 'blue-gray':
+      eyeColor['blue-gray'].push(starWarsCharacters[i])
       break
-      default: console.log('ERRORE')
+    default:
+      console.log('ERRORE')
   }
 }
 
 console.log('COLORI OCCHI =', eyeColor)
 console.log('')
-
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
@@ -185,7 +185,7 @@ console.log('')
 let crewMass = 0
 let ind = 0
 
-while(ind < starWarsCharacters.length){
+while (ind < starWarsCharacters.length) {
   console.log(starWarsCharacters[ind].mass)
   crewMass = crewMass + starWarsCharacters[ind].mass
   ind++
@@ -193,7 +193,7 @@ while(ind < starWarsCharacters.length){
 
 console.log('MASSA TOTALE =', crewMass)
 console.log('')
- 
+
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
 
@@ -227,7 +227,7 @@ console.log('')
 */
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  if(starWarsCharacters[i].gender === 'n/a') {
+  if (starWarsCharacters[i].gender === 'n/a') {
     starWarsCharacters[i].gender = 'robot'
   }
 }
@@ -244,7 +244,7 @@ console.log('NOMI PERSONAGGI PRIMA =', charactersNames)
 
 for (let i = 0; i < charactersNames.length; i++) {
   for (let i2 = 0; i2 < femaleCharacters.length; i2++) {
-    if(charactersNames[i] === femaleCharacters[i2].name) {
+    if (charactersNames[i] === femaleCharacters[i2].name) {
       charactersNames.splice(i, 1)
     }
   }
@@ -256,3 +256,24 @@ console.log('')
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+let personaggioRandom = starWarsCharacters[Math.floor(Math.random() * 10)]
+console.log(personaggioRandom)
+console.log(
+  personaggioRandom.name +
+    ' is a ' +
+    personaggioRandom.gender +
+    ' character from the Star Wars universe. He is ' +
+    personaggioRandom.height +
+    ' centimeters tall and weighs ' +
+    personaggioRandom.mass +
+    ' kilograms. He has ' +
+    personaggioRandom.hair_color +
+    ' hair, ' +
+    personaggioRandom.skin_color +
+    ' skin, ' +
+    personaggioRandom.eye_color +
+    ' eyes and  was born in the year ' +
+    personaggioRandom.birth_year +
+    '.'
+)
